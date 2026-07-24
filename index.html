@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>Hasta Ventures | 360° Business Solutions</title>
+  <title>Hasta Ventures | 360Â° Business Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
@@ -653,7 +653,10 @@
 
   @media (max-width: 768px) {
     .ds-hero-section {
-      height: 100vh;
+      height: auto;
+      min-height: auto;
+      padding-top: 110px;
+      padding-bottom: 42px;
     }
 
     .ds-intro {
@@ -702,7 +705,13 @@
     }
 
     .ds-overlay {
-      padding: 30px 18px;
+      position: relative;
+      inset: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 18px;
       text-align: center;
       animation-delay: 3.1s;
     }
@@ -712,16 +721,18 @@
     }
 
     .ds-main-title {
-      left: 50%;
+      position: relative;
+      left: auto;
       top: auto;
-      bottom: 230px;
-      transform: translateX(-50%);
-      width: auto;
+      bottom: auto;
+      transform: none;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 9px;
       max-width: none;
+      margin-top: 8px;
     }
 
     .ds-line-we {
@@ -736,11 +747,14 @@
     }
 
     .ds-content {
-      left: 18px;
-      right: 18px;
+      position: relative;
+      left: auto;
+      right: auto;
       top: auto;
-      bottom: 24px;
+      bottom: auto;
       max-width: none;
+      margin: 26px 18px 0;
+      text-align: center;
     }
 
     .ds-content p {
@@ -813,7 +827,7 @@
     <div class="ds-content">
       <p>
   Hasta Ventures Private Limited is a
-  <strong>360° business solutions</strong>
+  <strong>360Â° business solutions</strong>
   company <strong>helping brands grow</strong> through
   <strong>strategy, creativity, technology, and execution.</strong>
 </p>
@@ -1094,7 +1108,7 @@
   <!-- ============================================ -->
   <!-- <section class="featured-section" id="featured">
     <div class="featured-title">
-      <span class="featured-label">✦ FEATURED IN ✦</span>
+      <span class="featured-label">âœ¦ FEATURED IN âœ¦</span>
       <h2>Trusted By Leading Publications</h2>
       <p>Recognized globally for excellence and innovation</p>
     </div>
@@ -1336,7 +1350,7 @@
     </h2>
 
     <p class="ds-about-desc">
-      At Hasta Ventures, we bring together <strong>branding, marketing, design, technology, and execution</strong> — all under one roof. We work with businesses at every stage, helping them <strong>build strong foundations, scale efficiently, and create long-term impact.</strong>
+      At Hasta Ventures, we bring together <strong>branding, marketing, design, technology, and execution</strong> â€” all under one roof. We work with businesses at every stage, helping them <strong>build strong foundations, scale efficiently, and create long-term impact.</strong>
     </p>
   </div>
 </section>
@@ -1496,7 +1510,7 @@
     </h2>
 
     <p class="hv-tagline">
-      Building Brands • Scaling Businesses • Driving Innovation
+      Building Brands â€¢ Scaling Businesses â€¢ Driving Innovation
     </p>
   </div>
 </section> -->
@@ -1822,8 +1836,8 @@
 </div>
 
   <div class="ds-slider-arrows">
-    <button class="ds-arrow" onclick="prevDsSlide()">‹</button>
-    <button class="ds-arrow" onclick="nextDsSlide()">›</button>
+    <button class="ds-arrow" onclick="prevDsSlide()">â€¹</button>
+    <button class="ds-arrow" onclick="nextDsSlide()">â€º</button>
   </div>
 
   <script>
@@ -2093,7 +2107,7 @@
 
   <p>
     <strong>Why Businesses Choose Hasta Ventures</strong><br><br>
-    We offer complete <strong>360° execution</strong> — eliminating the need for multiple vendors.
+    We offer complete <strong>360Â° execution</strong> â€” eliminating the need for multiple vendors.
     Our approach combines <strong>strategy with execution</strong>, ensuring every output drives real business results.
     We deliver <strong>premium creative quality</strong> with strong business thinking behind every decision.
     With a strong presence in South India and capabilities across Pan India, we ensure seamless delivery.
@@ -2637,7 +2651,7 @@
     </h2>
 
     <p class="hv-cta-desc">
-      From idea to execution — we handle everything.
+      From idea to execution â€” we handle everything.
     </p>
 
     <div class="hv-cta-buttons">
@@ -2889,8 +2903,8 @@
         <a href="#">Instagram</a>
         <span class="channel-count">[01]</span>
         <div class="channel-buttons">
-          <button type="button" class="prev-channel">« Prev</button>
-          <button type="button" class="next-channel">Next »</button>
+          <button type="button" class="prev-channel">Â« Prev</button>
+          <button type="button" class="next-channel">Next Â»</button>
         </div>
       </div>
     </div>
@@ -2916,8 +2930,8 @@
         <a href="#">Instagram</a>
         <span class="channel-count">[02]</span>
         <div class="channel-buttons">
-          <button type="button" class="prev-channel">« Prev</button>
-          <button type="button" class="next-channel">Next »</button>
+          <button type="button" class="prev-channel">Â« Prev</button>
+          <button type="button" class="next-channel">Next Â»</button>
         </div>
       </div>
     </div>
@@ -2943,8 +2957,8 @@
         <a href="#">Instagram</a>
         <span class="channel-count">[03]</span>
         <div class="channel-buttons">
-          <button type="button" class="prev-channel">« Prev</button>
-          <button type="button" class="next-channel">Next »</button>
+          <button type="button" class="prev-channel">Â« Prev</button>
+          <button type="button" class="next-channel">Next Â»</button>
         </div>
       </div>
     </div>
@@ -3264,8 +3278,8 @@
       </div>
     </div>
 
-    <button class="team-arrow team-prev" type="button">‹</button>
-    <button class="team-arrow team-next" type="button">›</button>
+    <button class="team-arrow team-prev" type="button">â€¹</button>
+    <button class="team-arrow team-next" type="button">â€º</button>
   </div>
 
   <script>
@@ -3624,13 +3638,13 @@
         <h2>Can we live<br>forever?</h2>
         <div class="ds-blog-author">Hasta Ventures</div>
         <p class="ds-blog-desc">
-          We help brands grow with strategy, creativity, technology and execution — building digital systems that scale with confidence.
+          We help brands grow with strategy, creativity, technology and execution â€” building digital systems that scale with confidence.
         </p>
 
         <div class="ds-blog-explore">
           Explore
-          <button type="button" class="blog-prev">←</button>
-          <button type="button" class="blog-next">→</button>
+          <button type="button" class="blog-prev">â†</button>
+          <button type="button" class="blog-next">â†’</button>
         </div>
       </div>
 
@@ -3657,8 +3671,8 @@
 
         <div class="ds-blog-explore">
           Explore
-          <button type="button" class="blog-prev">←</button>
-          <button type="button" class="blog-next">→</button>
+          <button type="button" class="blog-prev">â†</button>
+          <button type="button" class="blog-next">â†’</button>
         </div>
       </div>
 
@@ -3685,8 +3699,8 @@
 
         <div class="ds-blog-explore">
           Explore
-          <button type="button" class="blog-prev">←</button>
-          <button type="button" class="blog-next">→</button>
+          <button type="button" class="blog-prev">â†</button>
+          <button type="button" class="blog-next">â†’</button>
         </div>
       </div>
 
@@ -3846,7 +3860,7 @@
     }
 
     .who-video-box::after {
-      content: "▶";
+      content: "â–¶";
       position: absolute;
       left: 50%;
       top: 50%;
@@ -4097,7 +4111,7 @@
   <div class="who-content">
     <h2>Who is<br>Hasta Ventures?</h2>
     <p>
-      Hasta Ventures Private Limited is a 360° business solutions company helping brands grow through strategy, creativity, technology, and execution. We build websites, digital systems, branding, marketing solutions, and scalable business experiences that help companies grow confidently in the digital era.
+      Hasta Ventures Private Limited is a 360Â° business solutions company helping brands grow through strategy, creativity, technology, and execution. We build websites, digital systems, branding, marketing solutions, and scalable business experiences that help companies grow confidently in the digital era.
     </p>
   </div>
 
@@ -4187,7 +4201,7 @@
   <div class="hv-footer-bottom">
 
     <span>
-      © 2025 Hasta Ventures Private Limited.
+      Â© 2025 Hasta Ventures Private Limited.
       All Rights Reserved.
     </span>
 
@@ -4330,3 +4344,4 @@
 
 </body>
 </html>
+
