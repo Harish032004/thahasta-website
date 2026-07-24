@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Hasta Ventures | 360° Business Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- ============================================ -->
+  <!-- GLOBAL STYLES (Variables, Base, Reset) -->
+  <!-- ============================================ -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --orange: #f7931e;
+      --orange-dark: #e07c10;
+      --orange-light: #ffb347;
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --gray: #888;
+      --light-bg: #f8f5f1;
+      --card-bg: #ffffff;
+      --border: rgba(247, 147, 30, 0.15);
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      background: var(--white);
+      font-family: "DM Sans", sans-serif;
+      color: var(--black);
+      overflow-x: hidden;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .section-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--orange);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .section-title-main {
+      font-family: "Syne", sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 60px;
+    }
+    .section-title-main span { color: var(--orange); }
+  </style>
+
+<!-- ============================================ -->
+  <!-- SECTION 1: NAVBAR & CURSOR STYLES -->
+  <!-- ============================================ -->
+  <style>
+    /* Import Poppins font */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    
+    /* Custom Cursor - Only for desktop */
+    @media (min-width: 1024px) {
+      #cursor {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background: var(--orange);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: transform 0.1s, width 0.2s, height 0.2s;
+      }
+      #cursor-ring {
+        position: fixed;
+        width: 38px;
+        height: 38px;
+        border: 1.5px solid var(--orange);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9998;
+        transform: translate(-50%, -50%);
+        transition: all 0.15s ease;
+        opacity: 0.6;
+      }
+    }
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 18px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      background: rgba(255, 255, 255, 0);
+    }
+    .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      padding: 12px 5%;
+      box-shadow: 0 4px 40px rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid rgba(247, 147, 30, 0.15);
+    }
+    .logo img { height: 54px; width: auto; transition: transform 0.3s; }
+    .logo img:hover { transform: scale(1.02); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      position: relative;
+      transition: color 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--orange);
+      transition: width 0.3s;
+      border-radius: 2px;
+    }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-links a:hover::after { width: 100%; }
+    .btn-nav {
+      background: var(--orange) !important;
+      color: #fff !important;
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+    .btn-nav::after { display: none !important; }
+    .menu-icon { display: none; font-size: 1.6rem; cursor: pointer; color: var(--black); z-index: 1200; }
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1050;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+      backdrop-filter: blur(4px);
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--orange);
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      font-size: 0.9rem;
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 0.02em;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(247, 147, 30, 0.35); }
+    .btn-outline { background: transparent; border: 2px solid var(--orange); color: var(--orange); }
+    .btn-outline:hover { background: var(--orange); color: white; }
+    
+    /* Mobile Navigation */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 340px;
+      height: 100vh;
+      background: var(--white);
+      z-index: 1100;
+      box-shadow: -10px 0 60px rgba(0, 0, 0, 0.12);
+      padding: 90px 32px 40px;
+      transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 24px;
+      overflow-y: auto;
+    }
+    .mobile-nav-header {
+      position: absolute;
+      top: 20px;
+      left: 28px;
+      right: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+    .mobile-nav-header img { height: 42px; width: auto; }
+    .close-menu { font-size: 1.8rem; cursor: pointer; color: var(--black); transition: color 0.2s; }
+    .close-menu:hover { color: var(--orange); }
+    .mobile-nav a {
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--black);
+      font-family: 'Poppins', sans-serif;
+      display: block;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .mobile-nav .btn-primary { text-align: center; margin-top: 20px; width: 100%; }
+    
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .menu-icon { display: block; }
+      .logo img { height: 50px; }
+    }
+    @media (max-width: 600px) {
+      .logo img { height: 55px; }
+      .mobile-nav-header img { height: 36px; }
+      .mobile-nav a { font-size: 1rem; padding: 10px 0; }
+    }
+  </style>
+
+ 
+
+</head>
+<body>
+
+
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 1: NAVBAR HTML -->
+  <!-- ============================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="logo"><img src="image-removebg-preview (3).png" alt="Hasta Ventures" /></div>
+    <div class="nav-links">
+      <a href="version2.html">Home</a>
+      <a href="version2.html#about">About</a>
+     <div class="nav-dropdown">
+  <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+
+  <div class="dropdown-menu">
+    <a href="branding.html">Branding & Creative</a>
+    <a href="marketing.html">Marketing & Growth</a>
+    <a href="design.html">Design & Communication</a>
+    <a href="events.html">Events & Experiences</a>
+    <a href="hampers.html">Corporate Hampers</a>
+    <a href="signages.html">Signages</a>
+    <a href="media.html">Media Production</a>
+    <a href="it-services.html">IT Services</a>
+    <a href="cybersecurity.html">Cybersecurity</a>
+  </div>
+</div>
+<style>
+  .nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown > a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-dropdown i {
+  font-size: 10px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 34px;
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  min-width: 280px;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(249,115,22,0.18);
+  border-radius: 18px;
+  padding: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 11px 14px;
+  color: #222;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(249,115,22,0.10);
+  color: #f97316;
+}
+
+.dropdown-menu a::after {
+  display: none;
+}
+</style>
+      <a href="version2.html#process">Process</a>
+      <a href="version2.html#why">Why Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn-nav">Book Consultation</a>
+    </div>
+    <div class="menu-icon" id="menuIcon"><i class="fas fa-bars"></i></div>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header"><img src="image.png" alt="Hasta Ventures" /><div class="close-menu" id="closeMenu"><i class="fas fa-times"></i></div></div>
+    <a href="version2.html">Home</a>
+    <a href="version2.html#about">About</a>
+   <div class="mobile-dropdown">
+  <button class="mobile-dropdown-btn" onclick="toggleMobileServices()">
+    Services <i class="fas fa-chevron-down"></i>
+  </button>
+
+  <div class="mobile-dropdown-menu" id="mobileServicesDropdown">
+    <a href="branding.html">Branding & Creative</a>
+    <a href="marketing.html">Marketing & Growth</a>
+    <a href="design.html">Design & Communication</a>
+    <a href="events.html">Events & Experiences</a>
+    <a href="hampers.html">Corporate Hampers</a>
+    <a href="signages.html">Signages</a>
+    <a href="media.html">Media Production</a>
+    <a href="it-services.html">IT Services</a>
+    <a href="cybersecurity.html">Cybersecurity</a>
+  </div>
+</div>
+<style>
+  .mobile-dropdown {
+  width: 100%;
+}
+
+.mobile-dropdown-btn {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 12px 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--black);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.mobile-dropdown-btn i {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.mobile-dropdown.active .mobile-dropdown-btn i {
+  transform: rotate(180deg);
+}
+
+.mobile-dropdown-menu {
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: max-height 0.4s ease;
+  padding-left: 14px;
+}
+
+.mobile-dropdown.active .mobile-dropdown-menu {
+  max-height: 520px;
+  margin-top: 8px;
+}
+
+.mobile-dropdown-menu a {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #444;
+  padding: 9px 0;
+  border-bottom: none;
+}
+</style>
+    <a href="version2.html#process">Process</a>
+    <a href="version2.html#why">Why Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn-primary" style="text-align:center">Book Consultation</a>
+  </div>
+
+
+
+
+  <!-- ============================================ -->
+  <!-- SECTION 10: MASTER JAVASCRIPT -->
+  <!-- ============================================ -->
+  <script>
+    // ============================================
+    // 1. NAVBAR & MOBILE MENU
+    // ============================================
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => { navbar.classList.toggle("scrolled", window.scrollY > 30); });
+    const menuIcon = document.getElementById("menuIcon"), mobileNav = document.getElementById("mobileNav"), overlay = document.getElementById("overlay"), closeMenu = document.getElementById("closeMenu");
+    menuIcon.onclick = () => { mobileNav.style.right = "0"; overlay.style.opacity = "1"; overlay.style.visibility = "visible"; };
+    const closeNav = () => { mobileNav.style.right = "-100%"; overlay.style.opacity = "0"; overlay.style.visibility = "hidden"; };
+    closeMenu.onclick = closeNav; overlay.onclick = closeNav;
+
+   
+  function toggleMobileServices() {
+    document.querySelector('.mobile-dropdown').classList.toggle('active');
+  }
+
+  </script>
+
+<section class="hv-contact-page">
+  <style>
+    .hv-contact-page{
+      position:relative;
+      min-height:100vh;
+      overflow:hidden;
+      background:#f6f4ef;
+      font-family:'Poppins',sans-serif;
+      padding:90px 6%;
+      display:flex;
+      align-items:center;
+    }
+
+    .hv-contact-page::before{
+      content:"";
+      position:absolute;
+      width:720px;
+      height:720px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(249,115,22,.28),rgba(249,115,22,.08) 48%,transparent 72%);
+      right:-180px;
+      top:-180px;
+    }
+
+    .hv-contact-page::after{
+      content:"CONTACT";
+      position:absolute;
+      left:-18px;
+      bottom:20px;
+      font-size:clamp(100px,16vw,260px);
+      line-height:.8;
+      font-weight:900;
+      letter-spacing:-12px;
+      color:rgba(17,17,17,.045);
+      pointer-events:none;
+    }
+
+    .hv-contact-wrap{
+      position:relative;
+      z-index:2;
+      width:100%;
+      display:grid;
+      grid-template-columns:1fr .9fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .hv-contact-label{
+      color:#f97316;
+      font-size:15px;
+      font-weight:800;
+      letter-spacing:5px;
+      text-transform:uppercase;
+      margin-bottom:24px;
+    }
+
+    .hv-contact-title{
+      margin:0;
+      color:#111;
+      font-size:clamp(62px,7vw,130px);
+      line-height:.88;
+      font-weight:900;
+      letter-spacing:-6px;
+      text-transform:uppercase;
+      max-width:900px;
+    }
+
+    .hv-contact-title span{
+      color:#f97316;
+    }
+
+    .hv-contact-text{
+      max-width:650px;
+      margin-top:34px;
+      font-size:21px;
+      line-height:1.6;
+      color:#333;
+      font-weight:500;
+    }
+
+    .hv-contact-details{
+      margin-top:42px;
+      display:grid;
+      gap:18px;
+    }
+
+    .hv-contact-detail{
+      padding:18px 22px;
+      border-left:4px solid #f97316;
+      background:rgba(255,255,255,.55);
+      backdrop-filter:blur(14px);
+      box-shadow:0 18px 50px rgba(249,115,22,.10);
+    }
+
+    .hv-contact-detail strong{
+      display:block;
+      color:#111;
+      font-size:15px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      margin-bottom:5px;
+    }
+
+    .hv-contact-detail span,
+    .hv-contact-detail a{
+      color:#444;
+      font-size:16px;
+      font-weight:500;
+      text-decoration:none;
+    }
+
+    .hv-contact-form-box{
+      position:relative;
+      padding:38px;
+      border-radius:30px;
+      background:rgba(255,255,255,.62);
+      backdrop-filter:blur(18px);
+      border:1px solid rgba(249,115,22,.18);
+      box-shadow:0 30px 90px rgba(249,115,22,.15);
+    }
+
+    .hv-contact-form-box h3{
+      margin:0 0 26px;
+      font-size:34px;
+      line-height:1;
+      font-weight:900;
+      letter-spacing:-1px;
+      color:#111;
+    }
+
+    .hv-contact-form{
+      display:grid;
+      gap:14px;
+    }
+
+    .hv-contact-form input,
+    .hv-contact-form textarea{
+      width:100%;
+      border:none;
+      outline:none;
+      background:rgba(255,255,255,.85);
+      padding:16px 18px;
+      border-radius:16px;
+      font-family:'Poppins',sans-serif;
+      font-size:14px;
+      color:#111;
+      border:1px solid rgba(17,17,17,.08);
+    }
+
+    .hv-contact-form textarea{
+      min-height:130px;
+      resize:none;
+    }
+
+    .hv-contact-form input:focus,
+    .hv-contact-form textarea:focus{
+      border-color:#f97316;
+      box-shadow:0 0 0 4px rgba(249,115,22,.10);
+    }
+
+    .hv-contact-btn{
+      margin-top:8px;
+      border:none;
+      cursor:pointer;
+      background:#f97316;
+      color:#fff;
+      padding:17px 28px;
+      border-radius:50px;
+      font-size:15px;
+      font-weight:800;
+      font-family:'Poppins',sans-serif;
+      box-shadow:0 18px 45px rgba(249,115,22,.35);
+      transition:.3s ease;
+    }
+
+    .hv-contact-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .hv-form-note{
+      margin-top:18px;
+      font-size:14px;
+      line-height:1.5;
+      color:#555;
+      font-weight:600;
+    }
+
+    .hv-form-note strong{
+      color:#f97316;
+      font-weight:800;
+    }
+
+    @media(max-width:768px){
+      .hv-contact-page{
+        padding:70px 20px;
+        align-items:flex-start;
+      }
+
+      .hv-contact-page::before{
+        width:430px;
+        height:430px;
+        right:-180px;
+        top:-120px;
+      }
+
+      .hv-contact-page::after{
+        font-size:86px;
+        letter-spacing:-5px;
+        bottom:10px;
+      }
+
+      .hv-contact-wrap{
+        grid-template-columns:1fr;
+        gap:38px;
+      }
+
+      .hv-contact-label{
+        font-size:12px;
+        letter-spacing:3px;
+        margin-bottom:18px;
+      }
+
+      .hv-contact-title{
+        font-size:48px;
+        line-height:.94;
+        letter-spacing:-2px;
+      }
+
+      .hv-contact-text{
+        margin-top:24px;
+        font-size:15px;
+        line-height:1.65;
+      }
+
+      .hv-contact-details{
+        margin-top:28px;
+        gap:12px;
+      }
+
+      .hv-contact-detail{
+        padding:15px 16px;
+      }
+
+      .hv-contact-detail strong{
+        font-size:12px;
+      }
+
+      .hv-contact-detail span,
+      .hv-contact-detail a{
+        font-size:14px;
+      }
+
+      .hv-contact-form-box{
+        padding:24px 18px;
+        border-radius:24px;
+      }
+
+      .hv-contact-form-box h3{
+        font-size:28px;
+      }
+
+      .hv-contact-form input,
+      .hv-contact-form textarea{
+        padding:14px 15px;
+        border-radius:14px;
+      }
+    }
+  </style>
+
+  <div class="hv-contact-wrap">
+
+    <div class="hv-contact-left">
+      <div class="hv-contact-label">Contact Page</div>
+
+      <h1 class="hv-contact-title">
+        LET’S BUILD<br>
+        SOMETHING<br>
+        <span>TOGETHER.</span>
+      </h1>
+
+      <p class="hv-contact-text">
+        Have an idea, project, or requirement? We’re here to help you execute it from start to finish.
+      </p>
+
+      <div class="hv-contact-details">
+        <div class="hv-contact-detail">
+          <strong>Company</strong>
+          <span>Hasta Ventures Private Limited</span>
+        </div>
+
+        <div class="hv-contact-detail">
+          <strong>Presence</strong>
+          <span>South India Presence | Pan India Service</span>
+        </div>
+
+        <div class="hv-contact-detail">
+          <strong>Phone</strong>
+          <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a>
+        </div>
+
+        <div class="hv-contact-detail">
+          <strong>Email</strong>
+          <a href="mailto:hello@hastaventures.com">hello@hastaventures.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hv-contact-form-box">
+      <h3>Start Your Project</h3>
+
+   <form class="hv-contact-form" id="whatsappForm">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="email" id="email" placeholder="Email Address" required>
+  <input type="tel" id="phone" placeholder="Phone Number" required>
+  <input type="text" id="service" placeholder="Service Required" required>
+  <textarea id="message" placeholder="Tell us about your requirement" required></textarea>
+
+  <button type="submit" class="hv-contact-btn">
+    Submit Enquiry
+  </button>
+</form>
+
+      <p class="hv-form-note">
+        <strong>We’ll get back to you within 24 hours.</strong>
+      </p>
+    </div>
+
+  </div>
+  <script>
+document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value;
+
+    const whatsappMessage =
+`*New Website Enquiry - Hasta Ventures*
+
+*Name:* ${name}
+*Email:* ${email}
+*Phone:* ${phone}
+*Service:* ${service}
+
+*Requirement:*
+${message}`;
+
+    const whatsappURL =
+      `https://wa.me/919789029012?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(whatsappURL, '_blank');
+});
+</script>
+</section>
+
+</body>
+</html>
