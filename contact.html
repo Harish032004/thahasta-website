@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>Hasta Ventures | 360° Business Solutions</title>
+  <title>Hasta Ventures | 360Â° Business Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
@@ -13,15 +13,15 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --orange: #f7931e;
-      --orange-dark: #e07c10;
-      --orange-light: #ffb347;
+      --orange: #facc15;
+      --orange-dark: #eab308;
+      --orange-light: #fde047;
       --black: #0a0a0a;
       --white: #ffffff;
       --gray: #888;
       --light-bg: #f8f5f1;
       --card-bg: #ffffff;
-      --border: rgba(247, 147, 30, 0.15);
+      --border: rgba(250, 204, 21, 0.15);
     }
     html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
@@ -112,7 +112,7 @@
       backdrop-filter: blur(20px);
       padding: 12px 5%;
       box-shadow: 0 4px 40px rgba(0, 0, 0, 0.06);
-      border-bottom: 1px solid rgba(247, 147, 30, 0.15);
+      border-bottom: 1px solid rgba(250, 204, 21, 0.15);
     }
     .logo img { height: 54px; width: auto; transition: transform 0.3s; }
     .logo img:hover { transform: scale(1.02); }
@@ -174,7 +174,7 @@
       font-family: 'Poppins', sans-serif;
       letter-spacing: 0.02em;
     }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(247, 147, 30, 0.35); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(250, 204, 21, 0.35); }
     .btn-outline { background: transparent; border: 2px solid var(--orange); color: var(--orange); }
     .btn-outline:hover { background: var(--orange); color: white; }
     
@@ -249,82 +249,11 @@
   <nav class="navbar" id="navbar">
     <div class="logo"><img src="image-removebg-preview (3).png" alt="Hasta Ventures" /></div>
     <div class="nav-links">
-      <a href="version2.html">Home</a>
-      <a href="version2.html#about">About</a>
-     <div class="nav-dropdown">
-  <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
-
-  <div class="dropdown-menu">
-    <a href="branding.html">Branding & Creative</a>
-    <a href="marketing.html">Marketing & Growth</a>
-    <a href="design.html">Design & Communication</a>
-    <a href="events.html">Events & Experiences</a>
-    <a href="hampers.html">Corporate Hampers</a>
-    <a href="signages.html">Signages</a>
-    <a href="media.html">Media Production</a>
-    <a href="it-services.html">IT Services</a>
-    <a href="cybersecurity.html">Cybersecurity</a>
-  </div>
-</div>
-<style>
-  .nav-dropdown {
-  position: relative;
-}
-
-.nav-dropdown > a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.nav-dropdown i {
-  font-size: 10px;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 34px;
-  left: 50%;
-  transform: translateX(-50%) translateY(12px);
-  min-width: 280px;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(249,115,22,0.18);
-  border-radius: 18px;
-  padding: 12px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s ease;
-}
-
-.nav-dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 11px 14px;
-  color: #222;
-  font-size: 13px;
-  font-weight: 600;
-  border-radius: 12px;
-  white-space: nowrap;
-}
-
-.dropdown-menu a:hover {
-  background: rgba(249,115,22,0.10);
-  color: #f97316;
-}
-
-.dropdown-menu a::after {
-  display: none;
-}
-</style>
-      <a href="version2.html#process">Process</a>
-      <a href="version2.html#why">Why Us</a>
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#why">Why Us</a>
       <a href="contact.html">Contact</a>
       <a href="contact.html" class="btn-nav">Book Consultation</a>
     </div>
@@ -333,79 +262,11 @@
   <div class="overlay" id="overlay"></div>
   <div class="mobile-nav" id="mobileNav">
     <div class="mobile-nav-header"><img src="image.png" alt="Hasta Ventures" /><div class="close-menu" id="closeMenu"><i class="fas fa-times"></i></div></div>
-    <a href="version2.html">Home</a>
-    <a href="version2.html#about">About</a>
-   <div class="mobile-dropdown">
-  <button class="mobile-dropdown-btn" onclick="toggleMobileServices()">
-    Services <i class="fas fa-chevron-down"></i>
-  </button>
-
-  <div class="mobile-dropdown-menu" id="mobileServicesDropdown">
-    <a href="branding.html">Branding & Creative</a>
-    <a href="marketing.html">Marketing & Growth</a>
-    <a href="design.html">Design & Communication</a>
-    <a href="events.html">Events & Experiences</a>
-    <a href="hampers.html">Corporate Hampers</a>
-    <a href="signages.html">Signages</a>
-    <a href="media.html">Media Production</a>
-    <a href="it-services.html">IT Services</a>
-    <a href="cybersecurity.html">Cybersecurity</a>
-  </div>
-</div>
-<style>
-  .mobile-dropdown {
-  width: 100%;
-}
-
-.mobile-dropdown-btn {
-  width: 100%;
-  background: transparent;
-  border: none;
-  padding: 12px 0;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--black);
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.mobile-dropdown-btn i {
-  font-size: 12px;
-  transition: transform 0.3s ease;
-}
-
-.mobile-dropdown.active .mobile-dropdown-btn i {
-  transform: rotate(180deg);
-}
-
-.mobile-dropdown-menu {
-  max-height: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: max-height 0.4s ease;
-  padding-left: 14px;
-}
-
-.mobile-dropdown.active .mobile-dropdown-menu {
-  max-height: 520px;
-  margin-top: 8px;
-}
-
-.mobile-dropdown-menu a {
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: #444;
-  padding: 9px 0;
-  border-bottom: none;
-}
-</style>
-    <a href="version2.html#process">Process</a>
-    <a href="version2.html#why">Why Us</a>
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#process">Process</a>
+    <a href="index.html#why">Why Us</a>
     <a href="contact.html">Contact</a>
     <a href="contact.html" class="btn-primary" style="text-align:center">Book Consultation</a>
   </div>
@@ -427,10 +288,6 @@
     const closeNav = () => { mobileNav.style.right = "-100%"; overlay.style.opacity = "0"; overlay.style.visibility = "hidden"; };
     closeMenu.onclick = closeNav; overlay.onclick = closeNav;
 
-   
-  function toggleMobileServices() {
-    document.querySelector('.mobile-dropdown').classList.toggle('active');
-  }
 
   </script>
 
@@ -440,7 +297,7 @@
       position:relative;
       min-height:100vh;
       overflow:hidden;
-      background:#f6f4ef;
+      background:#ffffff;
       font-family:'Poppins',sans-serif;
       padding:90px 6%;
       display:flex;
@@ -453,7 +310,7 @@
       width:720px;
       height:720px;
       border-radius:50%;
-      background:radial-gradient(circle,rgba(249,115,22,.28),rgba(249,115,22,.08) 48%,transparent 72%);
+      background:radial-gradient(circle,rgba(250,204,21,.24),rgba(250,204,21,.08) 48%,transparent 72%);
       right:-180px;
       top:-180px;
     }
@@ -482,7 +339,7 @@
     }
 
     .hv-contact-label{
-      color:#f97316;
+      color:#facc15;
       font-size:15px;
       font-weight:800;
       letter-spacing:5px;
@@ -502,7 +359,7 @@
     }
 
     .hv-contact-title span{
-      color:#f97316;
+      color:#facc15;
     }
 
     .hv-contact-text{
@@ -522,10 +379,10 @@
 
     .hv-contact-detail{
       padding:18px 22px;
-      border-left:4px solid #f97316;
-      background:rgba(255,255,255,.55);
+      border-left:4px solid #facc15;
+      background:rgba(255,255,255,.78);
       backdrop-filter:blur(14px);
-      box-shadow:0 18px 50px rgba(249,115,22,.10);
+      box-shadow:0 18px 50px rgba(250,204,21,.10);
     }
 
     .hv-contact-detail strong{
@@ -550,10 +407,10 @@
       position:relative;
       padding:38px;
       border-radius:30px;
-      background:rgba(255,255,255,.62);
+      background:rgba(255,255,255,.84);
       backdrop-filter:blur(18px);
-      border:1px solid rgba(249,115,22,.18);
-      box-shadow:0 30px 90px rgba(249,115,22,.15);
+      border:1px solid rgba(250,204,21,.18);
+      box-shadow:0 30px 90px rgba(250,204,21,.15);
     }
 
     .hv-contact-form-box h3{
@@ -575,7 +432,7 @@
       width:100%;
       border:none;
       outline:none;
-      background:rgba(255,255,255,.85);
+      background:rgba(255,255,255,.92);
       padding:16px 18px;
       border-radius:16px;
       font-family:'Poppins',sans-serif;
@@ -591,22 +448,22 @@
 
     .hv-contact-form input:focus,
     .hv-contact-form textarea:focus{
-      border-color:#f97316;
-      box-shadow:0 0 0 4px rgba(249,115,22,.10);
+      border-color:#facc15;
+      box-shadow:0 0 0 4px rgba(250,204,21,.10);
     }
 
     .hv-contact-btn{
       margin-top:8px;
       border:none;
       cursor:pointer;
-      background:#f97316;
+      background:#facc15;
       color:#fff;
       padding:17px 28px;
       border-radius:50px;
       font-size:15px;
       font-weight:800;
       font-family:'Poppins',sans-serif;
-      box-shadow:0 18px 45px rgba(249,115,22,.35);
+      box-shadow:0 18px 45px rgba(250,204,21,.35);
       transition:.3s ease;
     }
 
@@ -623,7 +480,7 @@
     }
 
     .hv-form-note strong{
-      color:#f97316;
+      color:#facc15;
       font-weight:800;
     }
 
@@ -710,13 +567,13 @@
       <div class="hv-contact-label">Contact Page</div>
 
       <h1 class="hv-contact-title">
-        LET’S BUILD<br>
+        LET'S BUILD<br>
         SOMETHING<br>
         <span>TOGETHER.</span>
       </h1>
 
       <p class="hv-contact-text">
-        Have an idea, project, or requirement? We’re here to help you execute it from start to finish.
+        Have an idea, project, or requirement? Weâ€™re here to help you execute it from start to finish.
       </p>
 
       <div class="hv-contact-details">
@@ -758,7 +615,7 @@
 </form>
 
       <p class="hv-form-note">
-        <strong>We’ll get back to you within 24 hours.</strong>
+        <strong>We"ll get back to you within 24 hours.</strong>
       </p>
     </div>
 
@@ -792,5 +649,164 @@ ${message}`;
 </script>
 </section>
 
+<footer class="hv-footer">
+  <div class="hv-footer-top">
+    <div class="hv-footer-brand">
+      <h2>Hasta Ventures.</h2>
+      <p>
+        Building brands through strategy, creativity,
+        technology and execution.
+      </p>
+      <div class="hv-socials">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Youtube</a>
+      </div>
+    </div>
+    <div class="hv-footer-links">
+      <h4>Company</h4>
+      <a href="version2.html#about">About Us</a>
+      <a href="version2.html#services">Services</a>
+      <a href="version2.html#process">Process</a>
+      <a href="version2.html#why">Why Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="hv-footer-links">
+      <h4>Services</h4>
+      <a href="version2.html#services">Website Development</a>
+      <a href="version2.html#services">Branding</a>
+      <a href="version2.html#services">Digital Marketing</a>
+      <a href="version2.html#services">SEO Services</a>
+      <a href="version2.html#services">Business Automation</a>
+    </div>
+    <div class="hv-footer-contact">
+      <h4>Get In Touch</h4>
+      <p>Chennai, Tamil Nadu</p>
+      <p>+91 82484 17434</p>
+      <p>support@hastaventures.com</p>
+    </div>
+  </div>
+  <div class="hv-footer-bottom">
+    <span>
+      © 2025 Hasta Ventures Private Limited.
+      All Rights Reserved.
+    </span>
+    <span>
+      Designed & Developed by
+      <strong><a href="https://harish032004.github.io/portfolio/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Harish</a></strong>
+    </span>
+  </div>
+</footer>
+
+<style>
+.hv-footer{
+    background:#0f0f0f;
+    color:#fff;
+    padding:90px 6% 30px;
+    font-family:'Poppins',sans-serif;
+}
+.hv-footer-top{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1.2fr;
+    gap:60px;
+    padding-bottom:50px;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+.hv-footer-brand h2{
+    font-size:58px;
+    line-height:.9;
+    margin:0 0 25px;
+    font-weight:900;
+    letter-spacing:-3px;
+}
+.hv-footer-brand h2::after{
+    content:".";
+    color:#facc15;
+}
+.hv-footer-brand p{
+    max-width:420px;
+    color:#a3a3a3;
+    line-height:1.8;
+    font-size:15px;
+}
+.hv-socials{
+    display:flex;
+    gap:20px;
+    margin-top:30px;
+}
+.hv-socials a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+.hv-socials a:hover{
+    color:#facc15;
+}
+.hv-footer-links h4,
+.hv-footer-contact h4{
+    margin:0 0 25px;
+    font-size:18px;
+    color:#facc15;
+}
+.hv-footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+.hv-footer-links a{
+    color:#d4d4d4;
+    text-decoration:none;
+    transition:.3s;
+}
+.hv-footer-links a:hover{
+    color:#facc15;
+    transform:translateX(5px);
+}
+.hv-footer-contact p{
+    color:#d4d4d4;
+    line-height:1.8;
+    margin:0 0 12px;
+}
+.hv-footer-bottom{
+    padding-top:28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#8c8c8c;
+    font-size:14px;
+    gap:16px;
+}
+.hv-footer-bottom strong{
+    color:#facc15;
+}
+@media(max-width:768px){
+    .hv-footer{
+        padding:60px 24px 24px;
+    }
+    .hv-footer-top{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+    .hv-footer-brand h2{
+        font-size:42px;
+    }
+    .hv-footer-brand p{
+        font-size:14px;
+        line-height:1.7;
+    }
+    .hv-socials{
+        flex-wrap:wrap;
+        gap:15px;
+    }
+    .hv-footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+</style>
+
 </body>
 </html>
+
+
+
