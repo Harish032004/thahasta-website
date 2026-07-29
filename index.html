@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>Hasta Ventures | 360Â° Business Solutions</title>
+  <title>Hasta Ventures | 360° Business Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
@@ -684,7 +684,7 @@
     <div class="ds-content">
       <p>
   Hasta Ventures Private Limited is a
-  <strong>360Â° business solutions</strong>
+  <strong>360° business solutions</strong>
   company <strong>helping brands grow</strong> through
   <strong>strategy, creativity, technology, and execution.</strong>
 </p>
@@ -965,7 +965,7 @@
   <!-- ============================================ -->
   <!-- <section class="featured-section" id="featured">
     <div class="featured-title">
-      <span class="featured-label">âœ¦ FEATURED IN âœ¦</span>
+      <span class="featured-label">✦ FEATURED IN ✦</span>
       <h2>Trusted By Leading Publications</h2>
       <p>Recognized globally for excellence and innovation</p>
     </div>
@@ -1044,22 +1044,24 @@
     .ds-about-carousel {
       position: absolute;
       inset: 0;
-      display: flex;
-      width: 600%;
+      display: block;
+      width: 100%;
       height: 100%;
-      animation: dsAboutScroll 22s linear infinite;
+      animation: none;
       z-index: 1;
     }
 
     .ds-about-carousel img {
-      flex: 0 0 16.6667%;
-      width: 16.6667%;
-      min-width: 16.6667%;
+      width: 100%;
       height: 100%;
       object-fit: fill;
       object-position: center center;
       display: block;
       filter: grayscale(100%) brightness(65%);
+    }
+
+    .ds-about-carousel img:not(:first-child) {
+      display: none;
     }
 
     .ds-about-section::after {
@@ -1142,12 +1144,12 @@
       }
 
       .ds-about-carousel {
-        width: 600%;
-        animation-duration: 14s;
+        width: 100%;
+        animation: none;
       }
 
       .ds-about-carousel img {
-        width: 16.666%;
+        width: 100%;
         object-position: center;
         filter: grayscale(100%) brightness(60%);
       }
@@ -1207,7 +1209,7 @@
     </h2>
 
     <p class="ds-about-desc">
-      At Hasta Ventures, we bring together <strong>branding, marketing, design, technology, and execution</strong> â€” all under one roof. We work with businesses at every stage, helping them <strong>build strong foundations, scale efficiently, and create long-term impact.</strong>
+      At Hasta Ventures, we bring together <strong>branding, marketing, design, technology, and execution</strong> — all under one roof. We work with businesses at every stage, helping them <strong>build strong foundations, scale efficiently, and create long-term impact.</strong>
     </p>
   </div>
 </section>
@@ -1367,7 +1369,7 @@
     </h2>
 
     <p class="hv-tagline">
-      Building Brands â€¢ Scaling Businesses â€¢ Driving Innovation
+      Building Brands • Scaling Businesses • Driving Innovation
     </p>
   </div>
 </section> -->
@@ -1638,7 +1640,7 @@
 </div>
 
 <div class="ds-slide">
-  <img src="https://i.pinimg.com/736x/80/22/50/8022506379cd94c43b22225c71344f76.jpg" alt="">
+  <img src="img3.jpg" alt="">
   <div class="ds-slide-content">
     <h2>Events<br><span>Corporate events, launches, and conferences</span></h2>
   </div>
@@ -1684,7 +1686,7 @@
   <button class="ds-thumb" onclick="showDsSlide(1)"><img src="https://i.pinimg.com/736x/4b/7e/1f/4b7e1f5ef71701edfc4b72f4cde6578d.jpg" alt=""></button>
   <button class="ds-thumb" onclick="showDsSlide(2)"><img src="https://i.pinimg.com/1200x/55/1b/15/551b157d85bbc5bf1b0f15b48453c446.jpg" alt=""></button>
   <button class="ds-thumb" onclick="showDsSlide(3)"><img src="https://i.pinimg.com/736x/1b/63/e4/1b63e483a1f3d8761542241af42cd47a.jpg" alt=""></button>
-  <button class="ds-thumb" onclick="showDsSlide(4)"><img src="https://i.pinimg.com/736x/80/22/50/8022506379cd94c43b22225c71344f76.jpg" alt=""></button>
+  <button class="ds-thumb" onclick="showDsSlide(4)"><img src="img3.jpg" alt=""></button>
   <button class="ds-thumb" onclick="showDsSlide(5)"><img src="https://i.pinimg.com/736x/be/09/65/be0965120aa9a85d9522fad0dc93a6f6.jpg" alt=""></button>
   <button class="ds-thumb" onclick="showDsSlide(6)"><img src="https://i.pinimg.com/736x/f4/8d/42/f48d42562d957aa5ea3546fd88da9013.jpg" alt=""></button>
   <button class="ds-thumb" onclick="showDsSlide(7)"><img src="https://i.pinimg.com/736x/e1/9d/82/e19d82cfe3fc3a17990291e0cddecb00.jpg" alt=""></button>
@@ -1964,7 +1966,7 @@
 
   <p>
     <strong>Why Businesses Choose Hasta Ventures</strong><br><br>
-    We offer complete <strong>360Â° execution</strong> â€” eliminating the need for multiple vendors.
+    We offer complete <strong>360° execution</strong> — eliminating the need for multiple vendors.
     Our approach combines <strong>strategy with execution</strong>, ensuring every output drives real business results.
     We deliver <strong>premium creative quality</strong> with strong business thinking behind every decision.
     With a strong presence in South India and capabilities across Pan India, we ensure seamless delivery.
@@ -2087,27 +2089,23 @@
       transition:color .35s ease;
     }
 
-    .hv-step:hover,
-    .hv-step.is-active{
+    .hv-step:hover{
       transform:translateY(-12px);
       background:rgba(250,204,21,.24);
       box-shadow:0 24px 60px rgba(250,204,21,.30);
     }
 
-    .hv-step:hover .hv-step-number,
-    .hv-step.is-active .hv-step-number{
+    .hv-step:hover .hv-step-number{
       color:rgba(250,204,21,.52);
       transform:translateY(-8px);
     }
 
-    .hv-step:hover h3,
-    .hv-step.is-active h3{
+    .hv-step:hover h3{
       color:#111111;
       transform:translateY(-4px);
     }
 
-    .hv-step:hover p,
-    .hv-step.is-active p{
+    .hv-step:hover p{
       color:#111111;
     }
 
@@ -2260,34 +2258,6 @@
         revealProcess();
       }
 
-      let activeIndex = 0;
-
-      const setActiveStep = (index) => {
-        steps.forEach((step, stepIndex) => {
-          step.classList.toggle('is-active', stepIndex === index);
-        });
-      };
-
-      setActiveStep(activeIndex);
-
-      const cycleSteps = () => {
-        activeIndex = (activeIndex + 1) % steps.length;
-        setActiveStep(activeIndex);
-      };
-
-      let cycleTimer = window.setInterval(cycleSteps, 2000);
-
-      steps.forEach((step, index) => {
-        step.addEventListener('mouseenter', () => {
-          window.clearInterval(cycleTimer);
-          activeIndex = index;
-          setActiveStep(activeIndex);
-        });
-
-        step.addEventListener('mouseleave', () => {
-          cycleTimer = window.setInterval(cycleSteps, 2000);
-        });
-      });
     })();
   </script>
 </section>
@@ -2508,7 +2478,7 @@
     </h2>
 
     <p class="hv-cta-desc">
-      From idea to execution â€” we handle everything.
+      From idea to execution — we handle everything.
     </p>
 
     <div class="hv-cta-buttons">
@@ -3495,7 +3465,7 @@
         <h2>Can we live<br>forever?</h2>
         <div class="ds-blog-author">Hasta Ventures</div>
         <p class="ds-blog-desc">
-          We help brands grow with strategy, creativity, technology and execution â€” building digital systems that scale with confidence.
+          We help brands grow with strategy, creativity, technology and execution — building digital systems that scale with confidence.
         </p>
 
         <div class="ds-blog-explore">
@@ -3717,7 +3687,7 @@
     }
 
     .who-video-box::after {
-      content: "â–¶";
+      content: "▶";
       position: absolute;
       left: 50%;
       top: 50%;
@@ -3968,7 +3938,7 @@
   <div class="who-content">
     <h2>Who is<br>Hasta Ventures?</h2>
     <p>
-      Hasta Ventures Private Limited is a 360Â° business solutions company helping brands grow through strategy, creativity, technology, and execution. We build websites, digital systems, branding, marketing solutions, and scalable business experiences that help companies grow confidently in the digital era.
+      Hasta Ventures Private Limited is a 360° business solutions company helping brands grow through strategy, creativity, technology, and execution. We build websites, digital systems, branding, marketing solutions, and scalable business experiences that help companies grow confidently in the digital era.
     </p>
   </div>
 
@@ -4058,7 +4028,7 @@
   <div class="hv-footer-bottom">
 
     <span>
-      Â© 2025 Hasta Ventures Private Limited.
+      © 2025 Hasta Ventures Private Limited.
       All Rights Reserved.
     </span>
 
@@ -4201,11 +4171,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
